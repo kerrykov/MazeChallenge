@@ -4,6 +4,13 @@ import java.awt.event.*;
 import java.io.*;
 import javax.swing.*;
 
+/**
+ * 
+ * JL - created
+ * JL - implemented confirm(), ask(), inform(), error(), saveChanges(), getFileName(), save(), open(), makeMenu()
+ *
+ */
+
 public class Utilities {
 
 	// Enables stack traces and diagnostics

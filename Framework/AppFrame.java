@@ -2,7 +2,14 @@ package Framework;
 
 import java.awt.event.*;
 import javax.swing.*;
-import framework.Utilities;
+import Framework.Utilities;
+
+/**
+ * 
+ * JL - created
+ * JL - implemented display(), setModel(), createMenuBar(), actionPerformed()
+ *
+ */
 
 @SuppressWarnings("serial")
 public class AppFrame extends JFrame implements ActionListener {

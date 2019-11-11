@@ -1,5 +1,12 @@
 package Framework;
 
+/**
+ * 
+ * JL - created
+ * JL - implemented execute()
+ *
+ */
+
 public class CommandProcessor {
 	
 	// Executes the command

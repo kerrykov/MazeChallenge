@@ -2,6 +2,13 @@ package Framework;
 
 import java.awt.event.*;
 
+/**
+ * 
+ * JL - created
+ * JL - implemented make model/panel, get commands, get info
+ *
+ */
+
 public interface AppFactory {
 	
 	// Make model and panel

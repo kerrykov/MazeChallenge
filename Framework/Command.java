@@ -1,5 +1,11 @@
 package Framework;
 
+/**
+ * 
+ * JL - created
+ *
+ */
+
 public abstract class Command {
 	
 	// Variable(s)

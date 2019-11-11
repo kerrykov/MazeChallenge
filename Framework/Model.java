@@ -3,6 +3,13 @@ package Framework;
 import java.io.Serializable;
 import java.util.*;
 
+/**
+ * 
+ * JL - created
+ * JL - implemented changed(), getFileName(), setFileName(), hasUnsavedChanges(), setUnsavedChanges()
+ *
+ */
+
 @SuppressWarnings("serial")
 abstract public class Model extends Observable implements Serializable {
 	  

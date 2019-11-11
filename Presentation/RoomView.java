@@ -1,5 +1,11 @@
 package Presentation;
 
+/**
+ * 
+ * KK - created
+ *
+ */
+
 public class RoomView {
 
 	int xCoord;

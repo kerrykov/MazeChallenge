@@ -4,6 +4,13 @@ import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 
+/**
+ * 
+ * JL - created
+ * JL - implemented setModel(), add()
+ *
+ */
+
 public class AppPanel extends JPanel implements Observer {
 	
 	// Variables

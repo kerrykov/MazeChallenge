@@ -3,6 +3,13 @@ package Framework;
 import java.util.*;
 import javax.swing.*;
 
+/**
+ * 
+ * JL - created
+ * JL - implemented view(), update(), setModel()
+ *
+ */
+
 @SuppressWarnings("serial")
 abstract public class View extends JComponent implements Observer {
 	

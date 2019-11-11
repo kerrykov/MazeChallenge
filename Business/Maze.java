@@ -3,6 +3,13 @@ package Business;
 import java.lang.reflect.Array;
 import java.lang.Math;
 
+/**
+ * 
+ * KK - created
+ * KK - implemented move(), getPlayerMovesLeft() and distanceToExit()
+ *
+ */
+
 public class Maze {
 	private Room exit;
 	private int movesLeft;
@@ -13,11 +20,11 @@ public class Maze {
 	private static int SIZE;
 	
 	public Maze() {
-		Room[][] rooms = new Room[SIZE][SIZE];
+		Room[][] rooms = new Room[SIZE][SIZE]; //New 2d array of size
 	}
 	
 	public void move(Heading direction) {
-		switch (direction) {
+		switch (direction) { //Depending on the direction, player moves
 		case NORTH: 
 			if (playerRow != 0) {
 				playerRow -= 1;
@@ -41,7 +48,11 @@ public class Maze {
 		}
 		}
 	
-	public int distanceToExit() {
+	public int distanceToExit() { //returns the exit distance to be displayed
 		return (int)Math.floor(Math.sqrt((exitRow - playerRow)^2 + (exitColumn - playerColumn)^2));
+	}
+	
+	public int getPlayerMovesLeft() {
+		return movesLeft;
 	}
 }
