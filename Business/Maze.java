@@ -1,6 +1,9 @@
 package Business;
 
 import java.lang.reflect.Array;
+
+import Framework.Model;
+
 import java.lang.Math;
 
 /**
@@ -10,7 +13,7 @@ import java.lang.Math;
  *
  */
 
-public class Maze {
+public class Maze extends Model {
 	private Room exit;
 	private int movesLeft;
 	private int exitRow;

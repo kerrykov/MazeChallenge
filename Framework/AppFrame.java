@@ -8,6 +8,7 @@ import Framework.Utilities;
  * 
  * JL - created
  * JL - implemented display(), setModel(), createMenuBar(), actionPerformed()
+ * JL - implemented getModel(), getPanel(), getFactory(). Fixed setModel()
  *
  */
 
@@ -40,14 +41,6 @@ public class AppFrame extends JFrame implements ActionListener {
 		this.setVisible(true); 
 	}
 	  
-	
-	// Sets the model of the AppFrame and AppPanel
-	// This uses the update component method instead of the copy method
-	public void setModel(Model model) {
-		  this.model = model;
-		  panel.setModel(model);
-	}
-	
 	// Creates Menu Bar for App Frame
 	protected JMenuBar createMenuBar() {
 		
@@ -104,6 +97,28 @@ public class AppFrame extends JFrame implements ActionListener {
 			Command command = factory.makeEditCommand(model, cmmd);
 			CommandProcessor.execute(command);
 		}
+	}
+
+	// Returns model to subclass
+	protected Model getModel() {
+		return model;
+	}
+	
+	// Returns appPanel to subclass
+	protected AppPanel getPanel() {
+		return panel;
+	}
+	
+	// Returns appFactory to subclass
+	protected AppFactory getFactory() {
+		return factory;
+	}
+	
+	// Sets the model of the AppFrame and AppPanel
+	// This uses the update component method instead of the copy method
+	public void setModel(Model model) {
+		  this.model = model;
+		  panel.setModel(model);
 	}
 	
 } 

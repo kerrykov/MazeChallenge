@@ -7,7 +7,7 @@ import javax.swing.*;
 /**
  * 
  * JL - created
- * JL - implemented setModel(), add()
+ * JL - implemented setModel(), add(), AppPanel()
  *
  */
 
@@ -18,7 +18,11 @@ public class AppPanel extends JPanel implements Observer {
 	protected ActionListener listener;
 	protected Set<View> views;
 		  
-	
+	// Constructor
+		public AppPanel(Model model, ActionListener listener) {
+			this.model = model;
+			this.listener = listener;
+		}
 	
 	// not completely sure how to use this yet.
 	// We have an update in the view as well but I'm
