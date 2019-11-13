@@ -10,6 +10,7 @@ import java.lang.Math;
  * 
  * KK - created
  * KK - implemented move(), getPlayerMovesLeft() and distanceToExit()
+ * KK - added getSize(), getExitColumn(), getExitRow(), getPlayerRow(), getPlayerColumn()
  *
  */
 
@@ -57,5 +58,25 @@ public class Maze extends Model {
 	
 	public int getPlayerMovesLeft() {
 		return movesLeft;
+	}
+	
+	public int getSize() {
+		return SIZE;
+	}
+	
+	public int getExitColumn() {
+		return exitColumn;
+	}
+	
+	public int getExitRow() {
+		return exitRow;
+	}
+	
+	public int getPlayerRow() {
+		return playerRow;
+	}
+	
+	public int getPlayerColumn() {
+		return playerColumn;
 	}
 }

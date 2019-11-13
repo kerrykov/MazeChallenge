@@ -8,6 +8,7 @@ import javax.swing.*;
  * 
  * JL - created
  * JL - implemented confirm(), ask(), inform(), error(), saveChanges(), getFileName(), save(), open(), makeMenu()
+ * KK - fixed getFileName()
  *
  */
 
@@ -69,7 +70,7 @@ public class Utilities {
 	}
 
 	// Ssks user for a file name
-	public static String getFileName(String fName) {
+	public static String getFileName(String fName, Boolean open) {
 		
 		JFileChooser chooser = new JFileChooser();
 		String result = null;
@@ -79,11 +80,14 @@ public class Utilities {
            chooser.setCurrentDirectory(new File(fName));
 		}
 		
-		int returnVal = chooser.showOpenDialog(null);
-		if(returnVal == JFileChooser.APPROVE_OPTION) {
-			result= chooser.getSelectedFile().getPath();
+		if (open) {
+			int returnVal = chooser.showOpenDialog(null);
+			if (returnVal == JFileChooser.APPROVE_OPTION) {
+				result = chooser.getSelectedFile().getPath();
+			}
+		} else {
+			int returnVal = chooser.showSaveDialog(null);
 		}
-		
 		return result;
 	}
 
