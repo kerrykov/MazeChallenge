@@ -8,6 +8,7 @@ import javax.swing.*;
  * 
  * JL - created
  * JL - implemented setModel(), add(), AppPanel()
+ * JL - implemented update()
  *
  */
 
@@ -24,17 +25,10 @@ public class AppPanel extends JPanel implements Observer {
 			this.listener = listener;
 		}
 	
-	// not completely sure how to use this yet.
-	// We have an update in the view as well but I'm
-	// not sure how the pnel is updated
-// UNFINISHED
+	//updates the observer
 	public void update(Observable subject, Object msg) {
-		// override in a subclass if desired
-	}
-// UNFINISHED
-
-	
-	
+		this.setModel((Model) subject);
+	}	
 	
 	  
 	// Sets a new model to the AppPanel (and the views)

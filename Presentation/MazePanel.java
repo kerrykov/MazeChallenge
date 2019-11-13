@@ -15,6 +15,7 @@ import Framework.Model;
  *
  */
 
+@SuppressWarnings("serial")
 public class MazePanel extends AppPanel {
 	
 	private ControlView controlView;

@@ -1,16 +1,16 @@
 package Business;
 
 import java.lang.reflect.Array;
-
-import Framework.Model;
-
+import Framework.*;
 import java.lang.Math;
+import java.util.*;
 
 /**
  * 
  * KK - created
  * KK - implemented move(), getPlayerMovesLeft() and distanceToExit()
- * KK - added getSize(), getExitColumn(), getExitRow(), getPlayerRow(), getPlayerColumn()
+ * KK - implemented getSize(), getExitColumn(), getExitRow(), getPlayerRow(), getPlayerColumn()
+ * SQ - fixed Maze(), implemented setPlayerRow(), setPlayerColumn()
  *
  */
 
@@ -21,10 +21,26 @@ public class Maze extends Model {
 	private int exitColumn;
 	private int playerRow;
 	private int playerColumn;
-	private static int SIZE;
+	private static int SIZE = 20;
 	
 	public Maze() {
+		Random gen = new Random();
 		Room[][] rooms = new Room[SIZE][SIZE]; //New 2d array of size
+		for (int column = 0; column < SIZE; column++) { //initializes all the rooms
+			for (int row = 0; row < SIZE; row++) {
+				rooms[column][row] = new Room();
+			}
+		}
+		//Selects a random room and makes it the exit
+		this.exitRow = gen.nextInt(SIZE - 1) + 1;
+		this.exitColumn = gen.nextInt(SIZE - 1) + 1;
+		this.exit = (rooms[exitRow][exitColumn]);
+		this.exit.setExit(true);
+		//sets the player's location to (0,0)
+		this.playerColumn = 0;
+		this.playerRow = 0;
+		//TODO calculate moves left
+		this.movesLeft = distanceToExit() + gen.nextInt(5);
 	}
 	
 	public void move(Heading direction) {
@@ -56,27 +72,41 @@ public class Maze extends Model {
 		return (int)Math.floor(Math.sqrt((exitRow - playerRow)^2 + (exitColumn - playerColumn)^2));
 	}
 	
+	//setter for the player row 
+	public void setPlayerRow(int row) {
+		this.playerRow = row;
+	}
+	
+	//setter for the player column
+	public void setPlayerColumn(int column) {
+		this.playerColumn = column;
+	}
+	
+	//getter for the number of moves left
 	public int getPlayerMovesLeft() {
-		return movesLeft;
+		return this.movesLeft;
 	}
 	
 	public int getSize() {
 		return SIZE;
 	}
 	
+	//getter for the exit column
 	public int getExitColumn() {
-		return exitColumn;
+		return this.exitColumn;
 	}
 	
+	//getter for the exit row
 	public int getExitRow() {
-		return exitRow;
+		return this.exitRow;
 	}
 	
+	//getter for the player row
 	public int getPlayerRow() {
-		return playerRow;
+		return this.playerRow;
 	}
-	
+	 //getter for the player column
 	public int getPlayerColumn() {
-		return playerColumn;
+		return this.playerColumn;
 	}
 }

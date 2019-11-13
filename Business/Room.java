@@ -3,9 +3,14 @@ package Business;
 /**
  * 
  * KK - created
+ * SQ - implemented setExit()
  *
  */
 
 public class Room {
-	boolean exit;
+	private boolean exit;
+	
+	public void setExit(boolean exit) {
+		this.exit = exit;
+	}
 }

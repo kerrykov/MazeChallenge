@@ -1,26 +1,23 @@
 package Presentation;
 
-import Business.Heading;
-import Business.Maze;
-import Framework.Command;
+import Business.*;
+import Framework.*;
 
 /**
  * 
  * KK - created
- * KK - implemented execute()
+ * JL - implemented execute(), MoveEast()
  *
  */
 
 public class MoveEast extends Command {
-	Maze maze;
-	Heading direction;
-	
+
 	public MoveEast(Maze maze) {
-		
+		model = maze;
 	}
 
 	public void execute() {
-		maze.move(direction.EAST);
+		((Maze) model).move(Heading.EAST);
 	}
 	
 }

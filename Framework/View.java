@@ -7,6 +7,7 @@ import javax.swing.*;
  * 
  * JL - created
  * JL - implemented view(), update(), setModel()
+ * JL - improved update()
  *
  */
 
@@ -28,6 +29,7 @@ abstract public class View extends JComponent implements Observer {
 	  
 	// Updates the maze view
 	public void update(Observable subject, Object msg) {
+		model = (Model) subject;
 		repaint();
 	} 
 	

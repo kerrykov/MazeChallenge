@@ -17,6 +17,7 @@ import Framework.View;
  *
  */
 
+@SuppressWarnings("serial")
 public class MazeView extends View {
 
 	public MazeView(Maze maze) {

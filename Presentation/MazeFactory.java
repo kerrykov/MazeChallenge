@@ -9,6 +9,7 @@ import Framework.*;
  * 
  * KK - created
  * JL - implemented makeModel(), makePanel(), getEditCommands(), makeEditCommand(), getTitle(), getHelp(), about()
+ * JL - fixed makePanel(), makeEditCommand()
  *
  */
 
@@ -21,12 +22,10 @@ public class MazeFactory implements AppFactory {
 
 	
 	
-	// NEEDS MAZEPANEL
 	@Override
 	public AppPanel makePanel(Model model, ActionListener listener) {
-		return new MazePanel(model, listener);
+		return new MazePanel((Maze) model, listener);
 	}
-	//NEEDS MAZEPANEL
 	
 	
 
@@ -38,20 +37,22 @@ public class MazeFactory implements AppFactory {
 	//UNFINISHED: NEED COMMAND CLASSES
 	@Override
 	public Command makeEditCommand(Model model, String type) {
+		Maze maze = (Maze) model;
+		
 		if (type == "North") {
-		//	return new SetNorth(model); 		// These are the commands
+			return new MoveNorth(maze); 		// These are the commands
 		}
 		else if (type == "South") {
-		//	return new SetNorth(model); 		// These are the commands	
+			return new MoveSouth(maze); 		// These are the commands	
 		}
 		else if (type == "East") {
-		//	return new SetNorth(model); 		// These are the commands
+			return new moveEast(maze); 		// These are the commands
 		}
 		else if (type == "West") {
-			//	return new SetNorth(model); 		// These are the commands
+			return new moveWest(maze);// These are the commands
 		}
 		else if (type == "Reset") {
-			//	return new SetNorth(model); 		// These are the commands
+			return new reset(maze); 		// These are the commands
 		}
 		return null;
 	}
